@@ -107,7 +107,7 @@ function getPasswordOptions() {
   let userSpecialCharacters=confirm("Wold you like to use SPECIAL characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
 
   if ((userLowercase||userUppercase||userNumeric||userSpecialCharacters)===false) {
-    alert("you should chose at least one character press ok and try again")
+    alert("you should chose at least one character type press ok and try again")
     return
     
   }

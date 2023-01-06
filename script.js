@@ -98,14 +98,19 @@ function getPasswordOptions() {
     
   }
   
-  let userLowercase=confirm("Wold you like to use lowercase characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
+  let userLowercase=confirm("Wold you like to use LOWERCASE characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
   
-  let userUppercase=confirm("Wold you like to use uppercase characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
+  let userUppercase=confirm("Wold you like to use UPPERCASE characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
   
-  let userNumeric=confirm("Wold you like to use numeric characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
+  let userNumeric=confirm("Wold you like to use NUMERIC characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
   
-  let userSpecialCharacters=confirm("Wold you like to use special characters characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
-  
+  let userSpecialCharacters=confirm("Wold you like to use SPECIAL characters characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
+
+  if ((userLowercase||userUppercase||userNumeric||userSpecialCharacters)===false) {
+    alert("you should chose at least one character press ok and try again")
+    return
+    
+  }
   return {characters:numberCharacters, lowercase:userLowercase, uppercase:userUppercase, numeric:userNumeric, special:userSpecialCharacters};
 
 

@@ -19,6 +19,12 @@ The link to the website [Password-Generator](https://asherbeck10.github.io/Passw
 * You should chose to generate a password with 10-64 characters.
 * you should chose at list one of the following characters:
 special characters,uppercase letters,lowercase letters and numeric characters
+<br>
+<br>
+
+
+## Credits
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 
 

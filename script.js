@@ -91,15 +91,15 @@ let upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   let numberCharacters = prompt("Number of characters,Please enter a number between 10 and 64.");
-  console.log(numberCharacters)
+  
   let userLowercase=confirm("Wold you like to use lowercase characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
-  console.log(userLowercase)
+  
   let userUppercase=confirm("Wold you like to use uppercase characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
-  console.log(userUppercase)
+  
   let userNumeric=confirm("Wold you like to use numeric characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
-  console.log(userNumeric)
+  
   let userSpecialCharacters=confirm("Wold you like to use special characters characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
-  console.log(userSpecialCharacters)
+  
   return {characters:numberCharacters, lowercase:userLowercase, uppercase:userUppercase, numeric:userNumeric, special:userSpecialCharacters};
 
 
@@ -111,8 +111,9 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 function getRandom(arr) {
   randomCharacter=arr[Math.floor((Math.random()*arr.length))]
-  console.log( "random " +randomCharacter)
-  return;
+  
+  return randomCharacter
+  
 
 }
 
@@ -123,30 +124,34 @@ function generatePassword() {
 
  if (userInput.lowercase===true) {
   arr=arr.concat(lowerCasedCharacters)
-  console.log(arr)
+  
   
  }
  if (userInput.uppercase===true) {
   arr=arr.concat(upperCasedCharacters)
-  console.log(arr)
+  
   
  }
  if (userInput.numeric===true) {
   arr=arr.concat(numericCharacters)
-  console.log(arr)
+  
   
  }
  if (userInput.special===true) {
   arr=arr.concat(specialCharacters)
-  console.log(arr)
+
+
+ }
+ let password=""
+ for (let i = 0; i <userInput.characters; i++) {
+  
+  password=password.concat(getRandom(arr))
   
  }
- for (let i = 0; i <userInput.characters; i++) {
-    getRandom(arr);
-    
-  }
+ 
   
-  return
+  alert("Your Password is: " +password)
+  return password
 
 }
 

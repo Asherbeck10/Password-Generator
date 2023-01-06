@@ -100,7 +100,7 @@ function getPasswordOptions() {
   console.log(userNumeric)
   let userSpecialCharacters=confirm("Wold you like to use special characters characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
   console.log(userSpecialCharacters)
-  return {characters:numberCharacters, lowercase:userLowercase, uppercase:userUppercase, numeric:userNumeric};
+  return {characters:numberCharacters, lowercase:userLowercase, uppercase:userUppercase, numeric:userNumeric, special:userSpecialCharacters};
 
 
 
@@ -123,6 +123,21 @@ function generatePassword() {
 
  if (userInput.lowercase===true) {
   arr=arr.concat(lowerCasedCharacters)
+  console.log(arr)
+  
+ }
+ if (userInput.uppercase===true) {
+  arr=arr.concat(upperCasedCharacters)
+  console.log(arr)
+  
+ }
+ if (userInput.numeric===true) {
+  arr=arr.concat(numericCharacters)
+  console.log(arr)
+  
+ }
+ if (userInput.special===true) {
+  arr=arr.concat(specialCharacters)
   console.log(arr)
   
  }

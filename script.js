@@ -100,7 +100,7 @@ function getPasswordOptions() {
   console.log(userNumeric)
   let userSpecialCharacters=confirm("Wold you like to use special characters characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character")
   console.log(userSpecialCharacters)
-  return numberCharacters
+  return {characters:numberCharacters, lowercase:userLowercase, uppercase:userUppercase, numeric:userNumeric}
 
 
 
@@ -118,8 +118,8 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
- let numberCharacters= getPasswordOptions()
-  for (let i = 0; i < numberCharacters; i++) {
+ let userInput= getPasswordOptions()
+  for (let i = 0; i <userInput.characters; i++) {
     getRandom(upperCasedCharacters);
     
   }

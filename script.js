@@ -91,6 +91,12 @@ let upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   let numberCharacters = prompt("Number of characters,Please enter a number between 10 and 64.");
+  if (numberCharacters<10 || numberCharacters>64) {
+    alert("number should be between 10 and 64 press ok and try again");
+    return
+    
+    
+  }
   
   let userLowercase=confirm("Wold you like to use lowercase characters?\nIf yes press ok if no press cancel\nRemember you should have at least one type of character");
   
@@ -110,50 +116,50 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  randomCharacter=arr[Math.floor((Math.random()*arr.length))]
+  randomCharacter=arr[Math.floor((Math.random()*arr.length))];
   
-  return randomCharacter
+  return randomCharacter;
   
 
-}
+};
 
 // Function to generate password with user input
 function generatePassword() {
- let userInput= getPasswordOptions()
+ let userInput= getPasswordOptions();
  let arr=[];
 
  if (userInput.lowercase===true) {
-  arr=arr.concat(lowerCasedCharacters)
+  arr=arr.concat(lowerCasedCharacters);
   
   
- }
+ };
  if (userInput.uppercase===true) {
-  arr=arr.concat(upperCasedCharacters)
+  arr=arr.concat(upperCasedCharacters);
   
   
- }
+ };
  if (userInput.numeric===true) {
-  arr=arr.concat(numericCharacters)
+  arr=arr.concat(numericCharacters);
   
   
- }
+ };
  if (userInput.special===true) {
-  arr=arr.concat(specialCharacters)
+  arr=arr.concat(specialCharacters);
 
 
- }
- let password=""
+ };
+ let password="";
  for (let i = 0; i <userInput.characters; i++) {
   
-  password=password.concat(getRandom(arr))
+  password=password.concat(getRandom(arr));
   
- }
+ };
  
   
-  alert("Your Password is: " +password)
-  return password
+ // alert("Your Password is: " +password);
+  return password;
 
-}
+};
 
 // Get references to the #generate element
 let generateBtn = document.querySelector('#generate');
@@ -165,7 +171,7 @@ function writePassword() {
   let passwordText = document.querySelector('#password');
 
   passwordText.value = password;
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);

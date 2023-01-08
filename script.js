@@ -90,7 +90,13 @@ let upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  let numberCharacters = prompt("Number of characters,Please enter a number between 10 and 64.");
+  let numberCharacters = parseInt(prompt("Number of characters,Please enter a number between 10 and 64."));
+
+  if (Number.isInteger(numberCharacters)===false) {
+    alert("You should enter a numeric value press OK and try again" )
+    return
+  }
+
   if (numberCharacters<10 || numberCharacters>64) {
     alert("number should be between 10 and 64 press ok and try again");
     return

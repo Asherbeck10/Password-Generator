@@ -18,7 +18,7 @@ The link to the website [Password-Generator](https://asherbeck10.github.io/Passw
 * Press the Generate Password button and follow on screen instructions.
 * You should chose to generate a password with 10-64 characters.
 * you should chose at least one of the following characters:
-special characters,uppercase letters,lowercase letters and numeric characters
+special characters,uppercase letters,lowercase letters and numeric characters.
 <br>
 <br>
 
